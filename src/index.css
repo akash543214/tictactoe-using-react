@@ -70,10 +70,13 @@
   /* MAIN */
   
   .main {
-    margin-left: 350px;
+
     padding: 0 20px;
   }
   
+  .container{
+    margin-left: 150px;
+  }
   .message {
     padding: 20px 0;
     font-size: 50px;
@@ -126,30 +129,6 @@
     background-color: var(--button-active-background);
   }
   
-  /* FOOTER */
-  
-  .footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    padding: 10px;
-    font-size: 20px;
-  }
-  
-  .fa-github {
-    color: var(--font-color);
-    font-size: 24px;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .fa-github:hover {
-    transform: rotate(360deg) scale(1.2);
-  }
   
   /* MEDIA QUERIES */
   
@@ -189,5 +168,8 @@
   
     .restart-button {
       font-size: 36px;
+    }
+    .container{
+      margin-left: 0px;
     }
   }

@@ -25,7 +25,7 @@ function Tictactoe()
     setMove('X');
     else
     setMove('0');
-   
+    
   };
 
   let i=0;
@@ -62,7 +62,7 @@ for(let i=0;i<=2;i++)
       {
         for(let i = 0;i<boardData.length;i++)
         {
-          if(boardData[i]=='')
+          if(boardData[i]==='')
           return false;
         }
 
@@ -71,21 +71,19 @@ for(let i=0;i<=2;i++)
     useEffect(() => {
         
       if(checkWin('X'))
-    {  console.log("X won");
+    {  
       setgamePlay(false);  
       setMessage("player X won");    
       }
       else if(checkWin('0'))
      { 
-      console.log("0 won");
+     
       setgamePlay(false);
       setMessage("player X won");    
     }
-      else if(isFull())
-      {
-        console.log("draw");
-        setMessage("draw");
-      }
+      else if(isFull()) setMessage("draw");
+      
+        else setMessage("Player "+move+"'s turn");
 
     }, [updateBoard])
   
@@ -99,14 +97,17 @@ for(let i=0;i<=2;i++)
           if(gamePlay)
           {
          let ind = parseInt(e.target.dataset.index);
-            updateBoard(ind,move);
+         if(boardData[ind]==='')
+            {
+              updateBoard(ind,move);
+            }
           }
         }}>
           {grid}
         </div>
         <div className="center">
           <button className="restart-button" id="restart-button" onClick={()=>{
-            setboardData(['','','','','','','','',''])
+            setboardData(['','','','','','','','','']);
             setgamePlay(true);
             setMessage("player 0's turn");
             }}>Restart</button>
